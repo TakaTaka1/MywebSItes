@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+<head>
+ <title>Studying Language</title>
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="jquery.min.js"></script>
+
+ 
+</head>
+
+<style type="text/css">
+
+html,body, input{
+	height:100%;
+	margin:0;
+	padding:0;
+
+}
+
+
+
+.fixedwidth{
+	width:1300px;
+	margin: 0 auto;
+	
+}
+
+
+#background{
+	width:1300px;
+	height:100%;
+	background-color:#99CCFF;
+	position:absolute;
+}
+
+
+
+#top{
+	position:relative;
+	width:100%;
+	height:80px;
+	background-color:#CCFFFF;
+	
+}
+
+#toptitle{
+	width:100%;
+	position:relative;
+	font-family:badaboom bb;
+	color:#993333;
+	font-size:60px;
+	padding-top:10px;
+
+}
+
+
+#searchdiv{
+
+	margin: 0 auto;
+	padding:0;
+}
+
+#searchdiv input{
+	margin: 0 auto;
+	border:none;
+	height:30px;
+	width:200px;
+	float:left;
+
+}
+
+
+#language ul{
+	margin:0px;
+	padding:0px;
+	
+	
+
+}
+
+#language li{
+	list-style:none;
+	float:left;
+	padding:4px 20px 10px 30px;
+	font-size:30px;
+	font-family:badaboom bb;
+	color:black;
+}
+
+
+#language a li:hover{
+
+	background-color:none;
+	
+ 	text-decoration:underline ;
+
+
+}
+
+#dropdown {
+	margin:0 auto;
+    position: relative;
+    display: inline-block;
+    
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    height:40px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding:0px 0 10px 15px;
+    border-radius:10px;
+    
+}
+
+#dropdown:hover #dropdown-content {
+    display: block;
+    color:blue;
+    margin:40px 0 0 23px;
+    text-decoration:underline ;
+
+}
+
+.fixedwidth2{
+	width:600px;
+	margin: 0 auto;
+	
+}
+
+
+
+#validation{
+
+	margin:0 auto;
+	margin-top:100px;
+	margin-left:0;
+	position:relative;
+}
+input{
+	width:300px;
+	height:30px;
+	padding:5px;
+	float:left;
+	border-radius:5px;
+	font-size:1.2em;
+	border: 1px solid grey;
+	margin-bottom:10px;
+	position:relative;
+	
+
+}
+
+#submitButton{
+	float:left;
+	margin-left:150px;
+	padding-top:5px;
+	width:100px;
+	height:50px;
+	position:relative;
+	
+	
+	
+	}
+	
+label{
+	
+		width: 150px;
+		float:left;
+		padding-top:7px;
+		font-family:badaboom bb;
+		letter-spacing:3px;
+		font-size:1.5em;
+		position:relative;
+	
+	}
+	
+	
+
+
+
+#error{
+		color:#CC3333;
+		font-family:badaboom bb;
+		margin:10px;
+		margin-left:0;
+		font-size:20px;
+		letter-spacing:2.5px;
+	}
+
+
+
+</style>
+
+<body>
+	
+	
+	
+	<div class="fixedwidth">
+		
+		<div id="top">
+	
+			<div id="toptitle"><center>Studying Language from scratch</center></div>
+	
+		</div>
+	
+		
+		
+		<div id="background">
+	
+			  		
+			<div id="searchdiv">
+		
+			
+				<input type="text" placeholder="search" />
+			
+		
+			</div>
+					
+				
+				
+			<div id="dropdown">
+			  <div id="dropdown-content"><p>Grammer<p></div>
+			
+			  <div id="language">
+				
+				  <ul>
+				
+				       <a href=""><li>English</li></a>
+				       <a href=""><li>Programming</li></a>
+						
+				  </ul>
+				
+			
+			  </div>
+			
+			 
+			</div>
+			
+			
+			
+			
+			
+		</div>
+	
+			
+	
+			
+	
+	</div>
+	
+	
+			  
+	<div class="fixedwidth2">
+			
+			  
+	
+			  
+			  
+			 	<form id="validation">
+				
+	
+				<div id="error"></div>
+			  
+				<label for="email">Email</label>
+				<input name="email" id="email"/>
+				
+				<label for="email">Email</label>
+				<input name="email" id="email"/>
+
+				
+				<label for="email">Email</label>
+				<input name="email" id="email"/>
+				
+				
+				<label for="email">Email</label>
+				<input name="email" id="email"/>
+	
+				<input id="submitButton" type="submit" value="submit"/>
+	
+				
+				</form>	
+		
+		
+	
+	</div>
+	
+	
+	
+	
+	<script>
+		
+	
+	$("#validation").submit(function(event){
+		event.preventDefault();
+		var errorMessage="";
+		
+		
+			function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+    // alert( pattern.test(emailAddress) );
+    return pattern.test(emailAddress);
+
+	};
+		
+		
+	if(!isValidEmailAddress($("#email").val())){
+	
+			 errorMessage="<br />Please enter a valid email address";
+	
+	}
+				
+				
+	$("#error").html( errorMessage);			
+	
+	
+	});
+	
+	
+	</script>
+
+
+</body>
+
+	
+</html>	
