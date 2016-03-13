@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+ <title>Learning JavaScript</title>
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ 
+</head>
+<style type="text/css">
+	#square{
+	
+	width:200px;
+	height:200px;
+	background-color:black;
+	display:none;
+	position:relative;
+	}
+	
+	
+
+	
+	
+
+
+</style>
+<body>
+	<p>Your time: <span id="time"></span>0s</p>
+	
+	<div id="square"></div>
+	
+	<div id="redColor"></div>
+	
+	<div id="greenColor"></div>
+	
+	<script type="text/javascript">
+	
+	function getRandomColor() {
+		var letters= '0123456789ABCDEF'.split('');
+		var color= '#';
+		for(var i=0; i<6; i++){
+		
+			color +=letters[Math.round(Math.random() *15)];
+		
+		
+		}
+	
+		return color;
+	
+	
+	}
+	
+	
+	var clickedTIme; var createdTime; var reactionTime;
+ 	
+	
+	Date.now();
+	
+	function makebox(){
+	
+	
+	  var x=Math.random();
+	  x=5000*x;
+	  x=Math.floor(x);
+	
+	 
+	  setTimeout(function(){
+	
+	  if(Math.random()>0.5){
+	
+	  document.getElementById("square").style.borderRadius="100px";
+	  
+	  } else{
+	  
+	  	document.getElementById("square").style.borderRadius="0";
+	  
+	  }
+	  
+	  var top=Math.random();
+	  top=top*300;
+	  
+	  var left=Math.random();
+	  left=left*300;
+	  
+	  
+	  document.getElementById("square").style.top=top+"px";
+	  
+	  document.getElementById("square").style.left=left+"px";
+	  
+	  
+	  document.getElementById("square").style.backgroundColor=getRandomColor();
+	  document.getElementById("square").style.display="block";
+	   
+	  createdTime=Date.now();
+	
+	},x);
+	
+	
+	};
+	
+		
+	
+	document.getElementById("square").onclick=function(){
+		
+		clickedTime=Date.now();
+		
+		reactionTime=(clickedTime-createdTime)/1000;
+		
+		document.getElementById("time").innerHTML=reactionTime;
+		
+		document.getElementById("square").style.display="none";
+		
+		makebox();
+	
+	};
+		
+		
+		makebox();
+	
+	
+
+
+	/*
+ 	*/
+ 	
+ 		
+    </script>
+	
+</body>
+</html>
