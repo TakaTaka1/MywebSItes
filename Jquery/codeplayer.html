@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+ <title>Learning jQuery</title>
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <script type="text/javascript" src="jquery.min.js"></script>
+ <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+ 
+</head>
+
+<style>
+body{
+	margin:0;
+	padding:0;
+
+}
+
+#topbar{ 
+	position:absolute;
+	width:1300px;
+	height:70px;
+	background-color:red;
+}
+
+#title{
+	padding-top:20px;
+	padding-left:10px;
+	font-size:1.3em;
+	float:left;
+	margin-right:10px;
+}
+
+#centerButton{
+	margin-top:0;
+	padding:0;
+	width:500px;
+	height:50px;
+	position:relative;
+	margin-left:40%;
+	
+
+}
+
+#centerButton button{
+	
+}
+
+#centerButton ul button{
+	padding:10px;
+	float:left;
+}
+
+
+#centerButton li{
+	
+	font-size:1.4em;
+	float:left;
+	list-style:none;
+		
+}
+
+
+#runButton{
+
+	width:100px;
+	float:right;
+	margin-top:15px;
+
+}
+
+#run{
+	
+	border-radius:10px;
+	padding:10px 20px 10px 20px;
+	
+	
+}
+
+#main{
+
+	width:1300px;
+	height:1200px;
+	background-color:green;
+	margin:4px auto;
+	padding:0;
+	border-top:1px solid black;
+	position:relative;
+}
+
+#section{
+	height:1000px;
+	width:1300px;
+
+
+}
+
+#section ul{
+	margin:0 auto;
+	padding:0;
+
+}
+
+
+#section li{
+	
+	list-style:none;
+ 	padding:10px 400px 1172px 2.55px;
+ 	border-right:0.5px solid black;
+ 	height:100%;
+ 	float:left;
+ 
+}
+
+
+
+
+</style>
+
+<body>
+
+
+	
+	
+
+
+<div id="topbar">
+	
+	
+	
+	<div id="title">CodePlayer</div>
+	
+	
+	
+
+	<div id="runButton">
+		
+		<button id="run">Run</button>
+
+			
+	</div>
+	
+	
+	<div id="centerButton">
+		
+		
+		
+		<ul>
+		
+		<button id="html"><li>HTML</li></button>
+		
+		<button id="css"><li>CSS</li></button>
+		
+		<button id="js"><li>JS</li></button>
+		
+		</ul>
+		
+		
+	</div>
+	
+	
+	<div id="main">
+	
+	<div id="section">
+	
+	<ul>
+	
+	<li id="section of html">HTML</li>
+	
+	<li id="section of css">CSS</li>
+	
+	<li id="section of js">JS</li>
+	
+	
+	</ul>
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	</div>
+		
+		
+	
+		
+</div>
+
+
+</body>
+
+<script>
+	
+	
+	
+$("#css").click(function(){
+ 
+ 
+ 			alert("yes");
+ 		document.getElementById("section of css").style.width="191px";
+ 		document.getElementById("section of css").style.border="none";
+	  	document.getElementById("section of html").style.width+="250px";
+	  	document.getElementById("section of js").style.display="none";
+	  	 
+	  	 
+ 
+ })
+
+
+
+
+
+ $("#html").click(function(){
+ 
+ 		alert("yes");
+ 		document.getElementById("section of html").style.width="895px";
+	  	document.getElementById("section of html").style.border="none";
+ 	
+ 	
+ 	
+ 
+ })
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
