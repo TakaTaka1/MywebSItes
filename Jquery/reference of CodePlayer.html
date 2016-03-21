@@ -91,6 +91,7 @@
 		height:100%;
 		border:none;
 		border-right:1px solid grey;
+		box-sizing:border-box;
 		font-size:90%;
 	
 	}
@@ -104,7 +105,7 @@
 	
 	}
 	
-	#cssContainer, #jsContainer{
+	#CSSContainer, #JSContainer{
 	
 		display:none;
 	
@@ -171,7 +172,7 @@
 		
 		<div class="codeLabel">HTML</div>
 		
-		<textarea>Example code</textarea>
+		<textarea id="htmlCode">Example code</textarea>
 		
 	</div>
 	
@@ -179,7 +180,7 @@
 		
 		<div class="codeLabel">CSS</div>
 		
-		<textarea>Example code</textarea>
+		<textarea id="cssCode">Example code</textarea>
 		
 	</div>
 	
@@ -187,7 +188,7 @@
 		
 		<div class="codeLabel">JS</div>
 		
-		<textarea>Example code</textarea>
+		<textarea id="jsCode"></textarea>
 		
 	</div>
 
@@ -195,7 +196,7 @@
 		
 		<div class="codeLabel">Result</div>
 		
-		<iframe></iframe>
+		<iframe id="resultFrame"></iframe>
 		
 	</div>
 
@@ -220,8 +221,32 @@
 			//Name of id have to be same characters or letters with div 
 			$("#"+activeDiv+"Container").toggle();
 			
+			var showingDivs= $(".codeContainer").filter(function(){
+				
+				return($(this).css("display")!="none");
+			
+			}).length;
+			
+			
+			var width=100/showingDivs;
+			
+			$(".codeContainer").width(width+"%");
+			
 		
 		});
+		
+		
+		$("#runButton").click(function(){
+		
+		
+			$("iframe").contents().find("html").html('<style>'+$("#cssCode").val()+'</style>'+$("#htmlCode").val());
+			
+			
+		
+		
+		});
+		
+		
 		
 	</script>
 
