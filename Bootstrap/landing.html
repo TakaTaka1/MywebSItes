@@ -21,35 +21,56 @@
   
   <style>
 
+	.container{
+		
+		
+	}
   
-  .fix{
-  
-  	height:900px;
-  
-  
-  }
-  
-  .background{
-  
-  background-image: url(img/bg.jpg);
-  height:1000px;
+  #topContainer{
+  width:100%;
+height:1200px;
   background-size: cover;
-   background-attachment: fixed;
+  	  
+  background-image: url(6H.jpg);
+
   
+  
+  }
+  
+  #form{
+  	margin:0;
+  	
+  }
+  
+  .form-group{
+  	
+  	margin-bottom:10px;
+  	
+  
+  }
+  #topRow{
+  	margin-top:100px;
+  	text-align:center;
+  
+  
+  }
+  
+  #topRow h1{
   
   
   
   }
+  
   
   </style>
 
  </head>
   
-  <body>
+  <body data-spy="scroll" data-target=".navbar-collapse">
   	
  	
  		
- 	<div class="navbar navbar-default">
+ 	<div class="navbar navbar-default  navbar-fixed-top">
  	
  		<div class="container">
 			
@@ -64,7 +85,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
-				
+			
 				
 			
 			</button>
@@ -75,26 +96,59 @@
 			
 			<div class="collapse navbar-collapse">
 		
+				
+		
 				<ul class="nav navbar-nav">
 					<li class=""><a href="">HOME</a></li>
 					<li class=""><a href="">About CHAIN</a></li>
 					<li class=""><a href="">Get the App</a></li>
-				</ul>	
+				
+				</ul>
+				
+					
+					
+				
+				<form class="navbar-form navbar-right">
+				
+					<div class="form-group">
+					<input  id="input" type="password" placeholder="Password" name="email" class="form-control"/>
+				    </div>
+				    
+				    <div class="form-group">
+				    <input  id="input" type="email" placeholder="Email" name="password" class="form-control"/>
+					</div>	
+					
+					<button type="submit"id="login" class="btn btn-success" data-toggle="modal" data-target="#myModal">LogIn</button>	
+		
+				
+					
+				</form>
+				
 	
 		 	</div>
+ 				
+ 				
+ 			
+					
+ 	
  	
  	
  		</div> 	
-		
-		
-		<div class="fix">
-			<div class="background"></div>
- 		</div>
- 	
+			
+			
+			
+			
  	</div>
- 	<div class="container">
- 	
+ 	<div class="container" id="topContainer">
  		
+ 		
+ 		<div class="row">
+ 			
+ 			<div class="col-md-6 col-md-offset-3" id="topRow">
+ 			<h1>My CHAIN</h1>
+ 			
+	 		</div>
+ 			
  	
  	</div>
  
@@ -105,7 +159,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
- 
+ 	<script>
+ 	
+ 		$("#topContainer").css("height",$(window).height());
+ 	
+ 	</script>
   
   	
 		
